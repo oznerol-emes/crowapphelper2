@@ -1,0 +1,135 @@
+ <!DOCTYPE html>
+<html ng-app="CrowAVTApp">
+    <head>
+        <title>Crow Tribal AVT app</title>
+       
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.css">
+        <link rel="stylesheet" href="/css/main.css">
+    </head>
+    <body class="container-fluid" ng-controller="HeroesController as hCtrl" ng-init="hCtrl.getHeroes(); hCtrl.getHQs()">
+        
+        <p><a href="http://localhost:1337/" class="btn btn-lg btn-danger">Logout</a></p>
+
+        <div class="jumbotron centered header">
+            <h2><b>{{hCtrl.greeting}}</b></h2>
+        </div>
+
+        <form class="centered" ng-submit="hCtrl.createHero()">
+            <div class="form-group">
+                <input class="form-control" type="text" placeholder="Name (last, first, middle initial)" ng-model="hCtrl.newHero.name" required >
+            </div>
+            <div class="form-group">
+                <input class="form-control" type="text" placeholder="Mailing Address" ng-model="hCtrl.newHero.address" required >
+            </div>
+            <div class="form-group">
+                <input class="form-control" type="text" placeholder="Date of Birth" ng-model="hCtrl.newHero.dob" required >
+            </div>
+            <div class="form-group">
+                <input class="form-control" type="text" placeholder="Social Security #" ng-model="hCtrl.newHero.ssn" required >
+            </div>
+
+             <div class="form-group">
+                <input class="form-control" type="text" placeholder="Phone #" ng-model="hCtrl.newHero.phone" required >
+            </div>
+
+             <div class="form-group">
+                <input class="form-control" type="text" placeholder="Email" ng-model="hCtrl.newHero.email" required >
+            </div>
+
+             <div class="form-group">
+                <input class="form-control" type="text" placeholder="Marital Status (Married, Single, Divorced, Widow, Separated" ng-model="hCtrl.newHero.mStatus" required >
+            </div>
+
+             <div class="form-group">
+                <input class="form-control" type="text" placeholder="Number of Dependents" ng-model="hCtrl.newHero.dependents" required >
+            </div>
+            
+
+
+            <div class="form-group">
+                <input type="checkbox" name="fancy-checkbox-default" id="fancy-checkbox-default" autocomplete="on" type="submit" ng-model="hCtrl.newHero.externalUnderwear"/>
+                <div class="btn-group">
+                    <label for="fancy-checkbox-default" class="btn btn-default">
+                        <span class="glyphicon glyphicon-ok"></span>
+                        <span> </span>
+                    </label>
+                    <label for="fancy-checkbox-default" class="btn btn-default active">
+                        Veteran
+                    </label>
+                </div>
+            </div>  
+            
+            <div class="form-group">  
+                <button class="btn btn-success form-control" type="submit">When complete Click Here</button>
+            </div>
+        </form>
+
+    <div class="jumbotron">
+       
+        <h3>CROW ADULT VOCATIONAL TRAINING
+        APPLICATION FOR TRAINING</h3>
+
+        <div class="row grid">
+            <div class="col-xs-4 col-md-6 grid">
+                        <p class="whiteLetter">Name (last, first, middle initial)</p> 
+                </div> 
+                <div class="col-xs-4 col-md-6 grid">
+                    <p class="whiteLetter">Mailing Address</p>        
+            </div>
+         </div>
+
+         <div class="row grid">
+            <div class="col-xs-4 col-md-6 grid">
+                        <p class="whiteLetter">{{hCtrl.newHero.name}}</p> 
+                </div> 
+                <div class="col-xs-4 col-md-6 grid">
+                    <p class="whiteLetter">{{hCtrl.newHero.address}}</p>        
+            </div>
+         </div>
+
+        <div class="row grid">
+             <div class="col-xs-2 col-md-4 grid">
+                 Date of Birth
+             </div>
+             <div class="col-xs-2 col-md-4 grid">
+                 Social Security Number
+             </div>
+             <div class="col-xs-2 col-md-4 grid">
+                 <div><b>Veteran:</b>
+                    <span ng-if="hero.externalUnderwear">Yes</span>
+                    <span ng-if="!hero.externalUnderwear">No</span>
+                 </div>
+             </div>
+        </div>
+
+         
+        <div class="row grid">
+            <div class="col-xs-2 col-md-4 grid">
+                 {{hCtrl.newHero.dob}}
+            </div>
+            <div class="col-xs-2 col-md-4 grid">
+                 {{hCtrl.newHero.ssn}}
+            </div>
+            <div class="col-xs-2 col-md-4 grid"></div>
+                  
+
+         </div>
+
+
+        
+
+
+
+    </div> <!-- closeJT -->
+
+
+
+
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/bootbox.js/4.4.0/bootbox.js"></script>
+        <script src="/js/controller.js"></script>
+    </body>
+</html>
